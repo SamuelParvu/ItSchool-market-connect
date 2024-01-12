@@ -1,7 +1,9 @@
-package com.market.connect.models.entity;
+package com.market.connect.models.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -15,6 +17,9 @@ public class Customer {
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
+    @Column(name = "email", unique = true)
+    private String email;
 
-
+    @OneToMany(mappedBy = "customer")
+    private List<Order> orders;
 }

@@ -1,9 +1,10 @@
-package com.market.connect.models.entity;
+package com.market.connect.models.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @Entity
@@ -19,13 +20,13 @@ public class Product {
     private String productName;
 
     @ElementCollection
-    @CollectionTable(name = "customer_ratings", joinColumns = @JoinColumn(name="customer_id"))
+    @CollectionTable(name = "customer_ratings", joinColumns = @JoinColumn(name = "customer_id"))
     @MapKeyColumn(name = "customer_email")
     @Column(name = "ratings")
-    private Map<Customer,Double> customerRatings;
+    private Map<Customer, Double> customerRatings;
 
     @ElementCollection
-    @CollectionTable(name = "customer_ratings", joinColumns = @JoinColumn(name="customer_id"))
+    @CollectionTable(name = "customer_ratings", joinColumns = @JoinColumn(name = "customer_id"))
     @MapKeyColumn(name = "customer_email")
     @Column(name = "reviews")
     private Map<Customer, String> customerReviews;
@@ -36,4 +37,7 @@ public class Product {
     private ProductCategory productCategory;
     @Column(name = "product_description")
     private String description;
+
+    @ManyToMany(mappedBy = "orders")
+    private List<Order> orders = new ArrayList<>();
 }
