@@ -1,4 +1,4 @@
-package com.market.connect.models.entity;
+package com.market.connect.models.entities;
 
 public enum ProductCategory {
 
