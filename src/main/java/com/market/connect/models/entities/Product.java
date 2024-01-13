@@ -9,7 +9,7 @@ import java.util.Map;
 
 @Entity
 @Data
-@Table(name = "product")
+@Table(name = "products")
 public class Product {
 
     @Id
@@ -26,7 +26,7 @@ public class Product {
     private Map<Customer, Double> customerRatings;
 
     @ElementCollection
-    @CollectionTable(name = "customer_ratings", joinColumns = @JoinColumn(name = "customer_id"))
+    @CollectionTable(name = "customer_reviews", joinColumns = @JoinColumn(name = "customer_id"))
     @MapKeyColumn(name = "customer_email")
     @Column(name = "reviews")
     private Map<Customer, String> customerReviews;
@@ -38,6 +38,6 @@ public class Product {
     @Column(name = "product_description")
     private String description;
 
-    @ManyToMany(mappedBy = "orders")
+    @ManyToMany(mappedBy = "products")
     private List<Order> orders = new ArrayList<>();
 }
