@@ -27,5 +27,5 @@ public class Order {
     @JoinTable(name = "orders_products",
             joinColumns = @JoinColumn(name = "order_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id"))
-    private List<Product> orders = new ArrayList<>();
+    private List<Product> products = new ArrayList<>();
 }
