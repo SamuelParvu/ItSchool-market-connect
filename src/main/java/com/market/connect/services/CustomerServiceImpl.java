@@ -1,6 +1,5 @@
 package com.market.connect.services;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.market.connect.models.dtos.CustomerDTO;
 import com.market.connect.models.entities.Customer;
 import com.market.connect.repositories.CustomerRepository;
@@ -14,10 +13,10 @@ import org.springframework.stereotype.Service;
 public class CustomerServiceImpl implements CustomerService {
 
     private final CustomerRepository customerRepository;
-    private final customerValidationService customerValidationService;
+    private final CustomerValidationService customerValidationService;
     private final ModelMapper modelMapper;
 
-    public CustomerServiceImpl(CustomerRepository customerRepository, customerValidationService customerValidationService, ModelMapper modelMapper) {
+    public CustomerServiceImpl(CustomerRepository customerRepository, CustomerValidationService customerValidationService, ModelMapper modelMapper) {
         this.customerRepository = customerRepository;
         this.customerValidationService = customerValidationService;
         this.modelMapper = modelMapper;
