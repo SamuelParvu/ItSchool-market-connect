@@ -7,10 +7,10 @@ import com.market.connect.repositories.CustomerRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class customerValidationServiceImpl implements customerValidationService {
+public class CustomerValidationServiceImpl implements CustomerValidationService {
     private final CustomerRepository customerRepository;
 
-    public customerValidationServiceImpl(CustomerRepository customerRepository) {
+    public CustomerValidationServiceImpl(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
 
