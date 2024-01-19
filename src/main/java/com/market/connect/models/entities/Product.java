@@ -1,5 +1,6 @@
 package com.market.connect.models.entities;
 
+import com.market.connect.utils.ProductCategory;
 import jakarta.persistence.*;
 import lombok.Data;
 
