@@ -1,6 +1,6 @@
 package com.market.connect.models.dtos;
 
-import com.market.connect.models.entities.ProductCategory;
+import com.market.connect.utils.ProductCategory;
 import com.market.connect.models.entities.Customer;
 import lombok.Data;
 
